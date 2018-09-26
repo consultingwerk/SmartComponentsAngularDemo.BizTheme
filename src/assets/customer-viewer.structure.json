@@ -1,0 +1,72 @@
+{
+    "customerInfo": {
+        "type": "fieldset",
+        "title": "Customer Details",
+        "fields": {
+            "CustNum": {
+                "enabledState": "add",
+                "inputSettings": {
+                    "inputType": "number",
+                    "step": 0.1,
+                    "style": {
+                        "width": "94px"
+                    }
+                }
+            },
+            "Name": true,
+            "cityAndState": {
+                "type": "group",
+                "fields": {
+                    "Country": true,
+                    "City": true,
+                    "State": {
+                        "enabledWhen": "selected.Country === 'USA'"
+                    }
+                }
+            },
+            "Address": true
+        }
+    },
+    "SmartComments": { 
+        "inputSettings": {
+            "inputType": "checkbox"
+        }
+    },
+    "SmartAttachments": {
+        "inputSettings": {
+            "inputType":"checkbox"
+        }
+    },
+    "salesRepInfo": {
+        "type": "fieldset",
+        "title": "Sales Rep",
+        "fields": {
+           
+            "SalesRep": {
+                "type": "field",
+                "inputSettings": {
+                    "inputType": "lookup",
+                    "lookupOptions": {
+                        "objectName": "salesrepLookup",
+                        "dialogTitle": "Lookup SalesRep",
+                        "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity",
+                        "entityTable": "eSalesrep",
+                        "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity/salesrep",
+                        "dialogOptions": "height=700px; width=600px",
+                       
+                        "fields": "RepName",
+                        "fieldBinding": {
+                            "RepName": "selected.eSalesrep[0].RepName"
+                        },
+                        "keyField": "SalesRep",
+                        "keyValueField": "RepName"
+                    }
+                }
+            },
+            "eSalesrep[0].RepName": {
+                "type": "field",
+                "label": "Rep Name"
+            }
+        }
+    }
+}

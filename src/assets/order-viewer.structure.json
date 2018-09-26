@@ -1,0 +1,32 @@
+{
+    "orderInfo": {
+        "type": "fieldset",
+        "title": "Order Information",
+        "fields": {
+            "Ordernum": {
+                "enabledState": "add"
+            },
+            "OrderDate": true,
+            "OrderStatus": true,
+            "Carrier": true,
+            "Instructions": true,
+            "PO": true,
+            "Terms": true
+        }
+    },
+    "customerInfo": {
+        "type": "fieldset",
+        "title": "Customer Information",
+        "fields": {
+            "eCustomer[0].CustNum": {
+                "type": "field",
+                "label": "Cust Num",
+                "enabledState": "add"
+            },
+            "eCustomer[0].Name": {
+                "type": "field",
+                "label": "Name"
+            }
+        }
+    }
+}

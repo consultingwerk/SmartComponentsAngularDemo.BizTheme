@@ -1,0 +1,27 @@
+<kendo-tabstrip [keepTabContent]="true" class="col-xs-12">
+    <kendo-tabstrip-tab [title]="'Session Info'" [selected]="true">
+        <ng-template kendoTabContent>
+            <session-info> </session-info>
+        </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'File Search'" [selected]="false">
+        <ng-template kendoTabContent>
+            <file-info> </file-info>
+        </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'ABL Dojo'" [selected]="false">
+        <ng-template kendoTabContent>
+            <abl-dojo> </abl-dojo>
+        </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'AppServer'" [selected]="false">
+        <ng-template kendoTabContent>
+            <appserver-manager> </appserver-manager>
+        </ng-template>
+    </kendo-tabstrip-tab>
+    <kendo-tabstrip-tab [title]="'Server Side Logging'" [selected]="false">
+        <ng-template kendoTabContent>
+            <serverside-logging> </serverside-logging>
+        </ng-template>
+    </kendo-tabstrip-tab>
+</kendo-tabstrip>

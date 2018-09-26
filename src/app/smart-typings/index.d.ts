@@ -1,0 +1,13 @@
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/CountryBusinessEntity/eCountry.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/CustomerBusinessEntity/eCustomer.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/CustomerBusinessEntity/eSalesrep.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/InvoiceBusinessEntity/eInvoice.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/ItemBusinessEntity/eItem.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/OrderBusinessEntity/eOrder.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/OrderBusinessEntity/eCustomer.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/OrderBusinessEntity/eOrderLine.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/OrderBusinessEntity/eItem.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/OrderBusinessEntity/eSalesrep.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/RegionBusinessEntity/eRegion.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000/SalesRepBusinessEntity/eSalesrep.d.ts" />
+///<reference path=".\Consultingwerk/SmartComponentsDemo/OERA/Sports2000Extra/SalesrepBusinessEntity/eSalesrep.d.ts" />

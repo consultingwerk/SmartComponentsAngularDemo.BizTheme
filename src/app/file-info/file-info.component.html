@@ -1,0 +1,36 @@
+<div class="container-fluid">
+  <div class="row">
+    <kendo-textbox-container floatingLabel="Filename" class="fill">
+      <div class="input-group">
+        <input kendoTextBox name="inputFileName" class="fill" id="inputFileName" [(ngModel)]="fileName">
+        <div class="input-group-addon k-button" style="display: table-cell">
+            <i class="fa fa-search"></i>
+        </div>
+      </div>
+    </kendo-textbox-container>
+  </div>
+  <div class="row">
+    <a (click)=click($event) class="file-link">.restapplicationsettings</a>
+    <a (click)=click($event) class="file-link">.applicationsettings</a>
+    <a (click)=click($event) class="file-link">.classpath</a>
+  </div>
+  <div class="row margin">
+    <kendo-textbox-container floatingLabel="SEARCH()" class="fill">
+        <input type="text" class="fill" kendoTextBox name="inputSearch" id="inputSearch" [(ngModel)]="searchResult" readonly>
+    </kendo-textbox-container>
+  </div>
+  <div class="row margin">
+    <kendo-grid [data]="fileInfo" scrollable="none">
+      <kendo-grid-column field="Property">
+        <ng-template kendoGridHeaderTemplate>
+          <p style="font-weight: bold">Property</p>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column field="Value">
+        <ng-template kendoGridHeaderTemplate>
+          <p style="font-weight: bold">Value</p>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+  </div>
+</div>

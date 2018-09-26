@@ -1,0 +1,96 @@
+{
+    "height": 500,
+    "width": 600,
+    "scrollable": "scrollable",
+    "sortable": true,
+    "selectable": "row",
+    "pageable": {
+        "refresh": true,
+        "pageSize": 10,
+        "pageSizes": [
+            10,
+            25,
+            100
+        ],
+        "buttonCount": 5
+    },
+    "columns": [
+        {
+            "field": "CustNum",
+            "title": "Cust Num",
+            "width": "100"
+        },
+        {
+            "field": "Name",
+            "title": "Name",
+            "width": "240"
+        },
+        {
+            "field": "Country",
+            "title": "Country",
+            "width": "160",
+            "windowSizes": [
+                "lg",
+                "md"
+            ]
+        },
+        {
+            "field": "City",
+            "title": "City",
+            "width": "200",
+            "windowSizes": [
+                "lg"
+            ]
+        },
+        {
+            "field": "eSalesrep[0].RepName",
+            "title": "Rep Name",
+            "width": "240",
+            "template": "childRelation:eSalesrep:RepName",
+            "windowSizes": [
+                "lg"
+            ]
+        },
+        {
+            "type": "command",
+            "width": "50",
+            "form": "/customer/:CustNum/orders",
+            "text": "View Orders",
+            "imageUrl": "Consultingwerk/SmartComponentsDemo/Web2/Images/package.png"
+        },
+        {
+            "type": "command",
+            "width": "50",
+            "action": "PutCustomerOnHoldHandler",
+            "text": "Put customer on credit hold",
+            "imageUrl": "Consultingwerk/SmartComponentsDemo/Web2/Images/sign_stop.png"
+        }
+    ],
+    "detailTemplate": {
+        "dataSources": [
+            {
+                "objectName": "orderDataSource",
+                "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity",
+                "tableRef": "eOrder",
+                "entityView": "eCustomer",
+                "initialFilter": {
+                    "operator": "eq",
+                    "field": "CustNum",
+                    "value": "[dataItem.CustNum]"
+                }
+            }
+        ],
+        "rows": [
+            {
+                "orderGrid": {
+                    "componentType": "grid",
+                    "componentOptions": {
+                        "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity/order",
+                        "dataSource": "orderDataSource",
+                        "objectName": "orderGrid"
+                    }
+                }
+            }
+        ]
+    }
+}

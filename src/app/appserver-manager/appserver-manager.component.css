@@ -1,0 +1,11 @@
+.fill {
+    width: 100%;
+}
+
+.margin {
+    padding-top: 10px;
+}
+
+:host /deep/ label {
+    font-weight: unset;
+}

@@ -1,0 +1,113 @@
+{
+    "dataSources": {
+        "CustomerDataSource": {
+            "objectName": "CustomerDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity",
+            "tableRef": "eCustomer",
+            "entityView": "eSalesRep"
+        },
+        "OrderCustomerDataSource": {
+            "objectName": "OrderCustomerDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity",
+            "tableRef": "eOrder",
+            "entityView": "eCustomer",
+            "foreignFields": "CustNum,CustNum",
+            "parentDataSource": "CustomerDataSource"
+        },
+        "OrderLineItemDataSource": {
+            "objectName": "OrderLineItemDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity",
+            "tableRef": "eOrderLine",
+            "entityView": "eItem",
+            "partialDataset": true,
+            "foreignFields": "Ordernum,Ordernum",
+            "parentDataSource": "OrderCustomerDataSource"
+        }
+    },
+    "columns": [
+        {
+            "TabFolder": {
+                "componentType": "tabfolder",
+                "componentOptions": {
+                    "objectName": "tabfolder",
+                    "pages": [
+                        {
+                            "label": "Customer",
+                            "icon": "Consultingwerk/SmartComponentsDemo/Web2/SalesrepCustomerTree/Images/businesspeople2.png",
+                            "key": "firstTab",
+                            "columns": [
+                                {
+                                    "CustomerGrid": {
+                                        "componentType": "grid",
+                                        "componentOptions": {
+                                            "objectName": "CustomerGrid",
+                                            "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer/OrderGridDetailTemplate",
+                                            "dataSource": "CustomerDataSource"
+                                        }
+                                    }
+                                },
+                                {
+                                    "CustomerToolbar": {
+                                        "componentType": "toolbar",
+                                        "componentOptions": {
+                                            "objectName": "DefaultToolbar",
+                                            "buttons": [
+                                                "add",
+                                                "copy",
+                                                "save",
+                                                "cancel",
+                                                "delete"
+                                            ]
+                                        }
+                                    },
+                                    "CustomerViewer": {
+                                        "componentType": "viewer",
+                                        "componentOptions": {
+                                            "objectName": "CustomerViewer",
+                                            "viewerLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer",
+                                            "dataSource": "CustomerDataSource",
+                                            "tableIoSource": "CustomerToolbar"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Orders",
+                            "icon": "Consultingwerk/SmartComponentsDemo/Web2/SalesrepCustomerTree/Images/purchase_order.png",
+                            "key": "secondTab",
+                            "columns": [
+                                {
+                                    "OrderGrid": {
+                                        "componentType": "grid",
+                                        "componentOptions": {
+                                            "objectName": "OrderGrid",
+                                            "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity/order",
+                                            "dataSource": "OrderCustomerDataSource"
+                                        }
+                                    }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Order Lines",
+                            "icon": "Consultingwerk/SmartComponentsDemo/Web2/SalesrepCustomerTree/Images/purchase_order.png",
+                            "columns": [
+                                {
+                                    "OrderLineGrid": {
+                                        "componentType": "grid",
+                                        "componentOptions": {
+                                            "objectName": "OrderLineGrid",
+                                            "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity/orderline",
+                                            "dataSource": "OrderLineItemDataSource"
+                                        }
+                                    }
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        }
+    ]
+}

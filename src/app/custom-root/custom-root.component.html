@@ -1,0 +1,62 @@
+<smart-hamburger-menu class="visible-xs" *ngIf="authenticated">
+  <a class="menu-header" smart-menu-heading>Demo Application</a>
+</smart-hamburger-menu>
+<smart-toolbar-menu class="hidden-xs" *ngIf="authenticated" disableFirstLevelIcons="true">
+  <smart-menu-item cssClass="account-menu">
+    <ng-template smartMenuItemTemplate>
+      {{sessionCtx?.UserFullName}}
+    </ng-template>
+
+    <smart-menu-item>
+      <ng-template smartMenuItemTemplate>
+        <div>
+          <div style="width: 100%; height: 100%" role="button" *smartRole="'logout'; afterLogoutPage: 'logout'">Logout</div>
+        </div>
+      </ng-template>
+    </smart-menu-item>
+  </smart-menu-item>
+  <smart-menu-item cssClass="language-picker">
+    <ng-template smartMenuItemTemplate>
+      <div>
+        <smart-language-picker id="languagePicker"></smart-language-picker>
+      </div>
+    </ng-template>
+  </smart-menu-item>
+</smart-toolbar-menu>
+<!-- header -->
+<!--<img class="hidden-xs hidden-sm cwlogo" src="./assets/consultingwerk.jpg" />
+    <img class="scllogo hidden-xs" src="./assets/logo.png" />
+    <div class="userinfo" *ngIf="authenticated && sessionCtx && !!sessionCtx.UserName">
+      <div class="visible-xs hidden-sm hidden-md hidden-lg col-xs-12" style="height: 30px; padding-right: 0px; padding-left: 0px;"></div>
+      <label for="languagePicker">Language</label>
+      <span>
+        &nbsp;&nbsp;
+        <smart-language-picker id="languagePicker"></smart-language-picker>
+      </span>
+      <br>
+      {{sessionCtx?.UserFullName || sessionCtx?.UserName}},&nbsp;
+      {{sessionCtx?.LoginCompanyName || sessionCtx?.LoginCompanyKey}}
+      <span>
+        <a role="button" *smartRole="'logout'; afterLogoutPage: 'logout'">Logout</a>
+      </span>
+    </div>-->
+<div class="wrapper" *ngIf="smartConfig.mdiInterface">
+  <router-outlet></router-outlet>
+  <router-outlet name="view" *ngIf="!smartConfig.mdiInterface"></router-outlet>
+  <smart-mdi></smart-mdi>
+</div>
+
+<!-- adjust layout for breadcrumb view -->
+<div class="wrapper" *ngIf="!smartConfig.mdiInterface">
+  <div style="padding-left: 10px" *ngIf="smartConfig.breadcrumbNavigation">
+    <smart-breadcrumb-navigation *ngIf="authenticated"></smart-breadcrumb-navigation>
+  </div>
+  <router-outlet></router-outlet>
+  <router-outlet name="view" *ngIf="!smartConfig.mdiInterface"></router-outlet>
+</div>
+<smart-dialog-outlet></smart-dialog-outlet>
+
+
+<footer class="footer">
+  <p>&copy;2017 Consultingwerk Ltd. - https://www.consultingwerk.com</p>
+</footer>

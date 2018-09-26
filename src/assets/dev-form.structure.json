@@ -1,0 +1,70 @@
+{
+    "$schema": "./schemas/smart-form.schema.json",
+    "dataSources": [
+        {
+            "objectName": "CustomerDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity",
+            "tableRef": "eCustomer",
+            "entityView": "eSalesrep",
+            "filterSource": "customersFilter"
+        }
+    ],
+    "columns": [
+        {
+            "*": {},
+            "splitview": {
+                "componentType": "splitview",
+                "componentOptions": {
+                    "left": {
+                    
+                        "columns": [
+                            {
+                                "group1": {
+                                    "componentType": "grid",
+                                    "componentOptions": {
+                                        "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer",
+                                        "dataSource": "CustomerDataSource",
+                                        "objectName": "customerGrid"
+                                    }
+                                }
+                            }
+                        ]
+                    },
+                    "right": {
+                        "columns": [
+                            {
+                                "toolbar": {
+                                    "componentType": "toolbar",
+                                    "componentOptions": {
+                                        "objectName": "customerToolbar",
+                                        "buttons": [
+                                            "add",
+                                            "copy",
+                                            "save",
+                                            "cancel",
+                                            "delete",
+                                            {
+                                                "buttonLabel": "Put On Hold",
+                                                "buttonName": "putOnHold",
+                                                "buttonTooltip": "Put customer on hold"
+                                            }
+                                        ]
+                                    }
+                                },
+                                "viewer": {
+                                    "componentType": "viewer",
+                                    "componentOptions": {
+                                        "viewerLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer",
+                                        "objectName": "CustomerViewer",
+                                        "dataSource": "CustomerDataSource",
+                                        "tableIoSource": "customerToolbar"
+                                    }
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        }
+    ]
+}

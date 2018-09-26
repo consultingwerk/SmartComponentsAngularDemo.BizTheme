@@ -1,0 +1,23 @@
+{
+    "dataSources": {
+        "SalesRepDataSource": {
+            "objectName": "salesrepDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.SalesRepBusinessEntity",
+            "tableRef": "eSalesrep"
+        }
+    },
+    "rows": [
+        {
+            "salesRepChart": {
+                "componentType": "custom",
+                "componentOptions": {
+                    "placeholderId": "salesrepChart",
+                    "context": {
+                        "title": "Salesrep Monthly Quota from JSON",
+                        "smartDataSource": "salesrepDataSource"
+                    }
+                }
+            }
+        }
+    ]
+}

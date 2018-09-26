@@ -1,0 +1,48 @@
+<kendo-panelbar *ngIf="!!sessionInfo">
+  <kendo-panelbar-item *ngFor="let item of sessionInfo" [title]="item.Label">
+    <ng-template kendoPanelBarContent>
+       <!--
+      <table class="table table-striped">
+        <tr>
+          <th></th>
+          <th>{{item.KeyLabel}}</th>
+          <th>{{item.DescriptionLabel}}</th>
+        </tr>
+
+        <tr *ngFor="let entry of item.Entries">
+          <td>
+            <img [src]="serviceAdapter.imageURI + '/' + entry.Image"/>
+          </td>
+          <td>
+            {{entry.Key}}
+          </td>
+          <td>
+            {{entry.Description}}
+          </td>
+        </tr>
+      </table>
+        -->
+      <kendo-grid [data]="item.Entries" scrollable="scrollable" height="400">
+      <kendo-grid-column width="40">
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <img [src]="serviceAdapter.imageURI + '/' + dataItem.Image"/>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column [title]="item.KeyLabel" field="Key">
+        <ng-template kendoGridHeaderTemplate>
+          <p style="font-weight: bold">{{item.KeyLabel}}</p>
+        </ng-template>
+      </kendo-grid-column>
+      <kendo-grid-column [title]="item.DescriptionLabel">
+        <ng-template kendoGridHeaderTemplate>
+          <p style="font-weight: bold">{{item.DescriptionLabel}}</p>
+        </ng-template>
+        <ng-template kendoGridCellTemplate let-dataItem>
+          <p>{{dataItem.Description}}</p>
+        </ng-template>
+      </kendo-grid-column>
+    </kendo-grid>
+
+    </ng-template>
+  </kendo-panelbar-item>
+</kendo-panelbar>

@@ -1,0 +1,15 @@
+.fill {
+    width: 100%;
+}
+
+.margin {
+    padding-top: 10px;
+}
+
+.file-link {
+    cursor: pointer;
+}
+
+:host /deep/ label {
+    font-weight: normal !important;
+}

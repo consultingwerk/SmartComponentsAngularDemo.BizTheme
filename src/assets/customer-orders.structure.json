@@ -1,0 +1,53 @@
+{
+    "dataSources": [
+        {
+            "objectName": "orderDataSource",
+            "entityName": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity",
+            "tableRef": "eOrder",
+            "entityView": "eCustomer"
+        }
+    ],
+    "columns": [
+        [
+            {
+                "componentType": "splitview",
+                "componentOptions": {
+                    "left": [
+                        {
+                            "componentType": "grid",
+                            "componentOptions": {
+                                "gridLayout": "Consultingwerk.SmartComponentsDemo.OERA.Sports2000.OrderBusinessEntity/order",
+                                "dataSource": "orderDataSource",
+                                "objectName": "orderGrid"
+                            }
+                        }
+                    ],
+                    "right": [
+                        {
+                            "componentType": "toolbar",
+                            "componentOptions": {
+                                "objectName": "orderToolbar",
+                                "buttons": [
+                                    "add",
+                                    "copy",
+                                    "save",
+                                    "cancel",
+                                    "delete"
+                                ]
+                            }
+                        },
+                        {
+                            "componentType": "viewer",
+                            "componentOptions": {
+                                "viewerLayout": "http://localhost:4200/assets/order-viewer.structure.json",
+                                "objectName": "orderViewer",
+                                "dataSource": "orderDataSource",
+                                "tableIo": "orderToolbar"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    ]
+}

@@ -1,0 +1,34 @@
+<smart-data-source
+        smart-object-name="CustomerDataSource"
+        smart-business-entity-name="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity"
+        smart-entity-table="eCustomer"
+        smart-entity-view="eSalesrep"
+        smart-filter-source="CustomerFilter">
+</smart-data-source>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xs-12 col-lg-6">
+            <smart-grid
+                smart-object-name="CustomerGrid" 
+                smart-grid-layout="Consultingwerk.SmartComponentsDemo.OERA.Sports2000.CustomerBusinessEntity/customer" 
+                smart-data-source="CustomerDataSource">
+            </smart-grid>
+        </div>
+        <div class="col-xs-12 col-lg-6">
+            <smart-toolbar
+                 smart-object-name="CustomerToolbar"> 
+                    <smart-toolbar-button role="add"></smart-toolbar-button>
+                    <smart-toolbar-button role="copy"></smart-toolbar-button>
+                    <smart-toolbar-button role="save"></smart-toolbar-button>
+                    <smart-toolbar-button role="cancel"></smart-toolbar-button>
+                    <smart-toolbar-button role="delete"></smart-toolbar-button>
+            </smart-toolbar>
+            <smart-viewer
+                smart-object-name="CustomerViewer"
+                smart-data-source="CustomerDataSource"
+                smart-viewer-layout="frontend://assets/customer-viewer.structure.json"
+                smart-tableio-source="CustomerToolbar">
+            </smart-viewer>
+        </div>
+    </div>
+</div>

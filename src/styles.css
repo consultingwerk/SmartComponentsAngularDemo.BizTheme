@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+@import 'biz-theme/all.css';
+
+.smart-breadcrumb-navigation {
+    background-color: inherit !important;
+    margin-bottom: 0px !important;
+    padding-left: 5px !important;
+}
+
+.smart-breadcrumb-label {
+    color: #1c597c !important;
+}
+
+.ui-treetable {
+    border-right: none !important;
+}
