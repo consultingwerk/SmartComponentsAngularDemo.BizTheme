@@ -45,7 +45,7 @@
 		"@progress/kendo-theme-bootstrap": "^2.13.7",
 		"@progress/kendo-theme-default": "^2.54.1",
 		"angular2-file-drop": "^0.2.0",
-		"angular2-text-mask": "^8.0.3",
+		"angular2-text-mask": "^9.0.0",
 		"angular2-uuid": "^1.1.1",
 		"bootstrap": "^3.3.7",
 		"cldr-data": "^33.0.0",

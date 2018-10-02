@@ -24,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {CustomerOrderFormModule} from "./forms/customer-order/customer-order.form";
 import {CustomerTabfolderFormModule} from "./forms/customer-tabfolder/customer-tabfolder.form";
 import {CustomerMaintenanceHtmlFormModule} from "./forms/customer-maintenance-html/customer-maintenance-html.form";
+import { CustomerMaintenanceAnnotationsFormModule } from './forms/customer-maintenance-annotations/customer-maintenance-annotations.form';
 
 load(
   likelySubtags,
@@ -45,6 +46,7 @@ load(
   ],
   entryComponents: [LogoutComponent],
   imports: [
+    CustomerMaintenanceAnnotationsFormModule,
 		CustomerMaintenanceHtmlFormModule,
 		CustomerTabfolderFormModule,
     CustomerOrderFormModule,

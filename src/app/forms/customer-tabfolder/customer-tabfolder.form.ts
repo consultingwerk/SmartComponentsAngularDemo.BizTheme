@@ -1,4 +1,4 @@
-import { SmartComponentLibraryModule, SmartFormComponent, CustomSmartForm, DataSourceRegistry, SmartViewerRegistryService, SmartViewManagerService, SmartFormInstanceService, SmartToolbarRegistry, WidgetFacadeFactory, SmartDialogService, SmartTabFolderComponent, SmartTabFolderRegistryService } from '@consultingwerk/smartcomponent-library';
+import { SmartComponentLibraryModule, SmartFormComponent, CustomSmartForm, DataSourceRegistry, SmartViewerRegistryService, SmartViewManagerService, SmartFormInstanceService, SmartToolbarRegistry, WidgetFacadeFactory, SmartDialogService, SmartTabFolderComponent, SmartTabFolderRegistryService, SmartNavigationService } from '@consultingwerk/smartcomponent-library';
 import { Component, Injector, OnInit, OnDestroy, OnChanges, SimpleChanges, NgModule, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common';
 import { CustomerMaintenanceFormComponent } from '../customer-maintenance/customer-maintenance.form';
@@ -13,12 +13,14 @@ import { CustomerMaintenanceFormComponent } from '../customer-maintenance/custom
 export class CustomerTabfolderFormComponent extends CustomerMaintenanceFormComponent implements OnInit, OnDestroy, OnChanges {
 
     constructor(injector: Injector,
-        widgetFactory: WidgetFacadeFactory,
-        dsRegistry: DataSourceRegistry,
+        toolbarRegistry: SmartToolbarRegistry,
         viewerRegistry: SmartViewerRegistryService,
-        private tabRegistry: SmartTabFolderRegistryService,
-        dialogService: SmartDialogService) {
-        super(injector, widgetFactory, dsRegistry, viewerRegistry, dialogService);
+        dsRegistry: DataSourceRegistry,
+        widgetFactory: WidgetFacadeFactory,
+        dialogService: SmartDialogService,
+        navigationService: SmartNavigationService,
+        private tabRegistry: SmartTabFolderRegistryService) {
+            super(injector, toolbarRegistry, viewerRegistry, dsRegistry, widgetFactory, dialogService, navigationService);
     }
 
     async ngOnInit() {
