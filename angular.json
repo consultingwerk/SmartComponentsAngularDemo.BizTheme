@@ -65,7 +65,8 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"options": {
-						"browserTarget": "SmartComponentsAngularDemo-BizTheme:build"
+						"browserTarget": "SmartComponentsAngularDemo-BizTheme:build",
+						"port": 4201
 					},
 					"configurations": {
 						"production": {
