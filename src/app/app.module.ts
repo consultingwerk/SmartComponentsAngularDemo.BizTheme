@@ -76,7 +76,13 @@ load(
       breadcrumbNavigation: true,
       mdiInterface: false,
       moduleCode: 'Web2 Demo',
-      development: false
+      development: false,
+      componentDefaults: {
+        grid: {
+          cellTextWrap: true,
+          showNoDataMessage: true
+        }
+      }
     }),
     BrowserAnimationsModule,
     RouterModule.forRoot([{

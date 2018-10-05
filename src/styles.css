@@ -14,3 +14,13 @@
 .ui-treetable {
     border-right: none !important;
 }
+
+.k-grid td {
+    border-bottom-width: 0px;
+    border-left-width: 0px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-color:black;
+}
+
+
