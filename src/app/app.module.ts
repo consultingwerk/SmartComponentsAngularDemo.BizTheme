@@ -96,7 +96,7 @@ load(
       component: SmartFormOutletComponent,
       data: {
         BrowserTitleTemplate: 'Start',
-        ViewUri: `frontend://${environment.baseHref}/assets/start-page.layout.json`
+        ViewUri: `frontend://${environment.baseHref}assets/start-page.layout.json`
       }
     }],
     { useHash: true })
