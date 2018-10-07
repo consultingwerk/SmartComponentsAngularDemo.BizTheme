@@ -24,3 +24,32 @@
 }
 
 
+smart-dialog * {
+    font-size: 10pt !important;
+}
+
+.smart-toolbar-menu-item-header {
+    font-size: 11pt !important;
+}
+
+.smart-toolbar-menu-item-label {
+    font-size: 10pt !important;
+}
+
+.toolbar-wrapper {
+    padding: 5px !important;
+    background-color: darkgray;
+    background-image: linear-gradient(#ededed,#e8e8e8) !important;
+}
+
+.smart-toolbar-button {
+    border-radius: 0px !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+    border-color: rgba(0,0,0,.15) !important;
+    background-image: linear-gradient(#ededed,#e8e8e8) !important;
+}
+
+.smart-toolbar-button:hover {
+    background: #e8e8e8 !important;
+}
