@@ -2,7 +2,7 @@ import { SmartComponentLibraryModule, SmartFormComponent, CustomSmartForm, DataS
 import { Component, Injector, OnInit, OnDestroy, OnChanges, SimpleChanges, NgModule, ViewChild } from '@angular/core'
 import { CommonModule } from '@angular/common';
 import { CustomerMaintenanceFormComponent } from '../customer-maintenance/customer-maintenance.form';
-
+import { environment } from '../../../environments/environment';
 
 @CustomSmartForm('CustomerFormWithTabFolder')
 @Component({
@@ -27,7 +27,7 @@ export class CustomerTabfolderFormComponent extends CustomerMaintenanceFormCompo
         // Add your own initialization logic here
         
        // this.setFormConfiguration('/SmartForm/Form/CustomerFormWithTabFolder');
-        this.setFormConfiguration('frontend://assets/tabfolder.layout.json')
+        this.setFormConfiguration(`frontend://${environment.baseHref}assets/tabfolder.layout.json`)
         SmartFormComponent.prototype.ngOnInit.call(this);
     }
 
