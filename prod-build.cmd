@@ -1,0 +1,1 @@
+ng build --base-href="/static/smartcomponentsdemo.biztheme/" --output-path C:\Work_STREAM\SmartComponentLibrary\Develop\smartpas_stream\webapps\ROOT\static\smartcomponentsdemo.biztheme --prod

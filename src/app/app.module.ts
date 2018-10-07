@@ -25,6 +25,7 @@ import {CustomerOrderFormModule} from "./forms/customer-order/customer-order.for
 import {CustomerTabfolderFormModule} from "./forms/customer-tabfolder/customer-tabfolder.form";
 import {CustomerMaintenanceHtmlFormModule} from "./forms/customer-maintenance-html/customer-maintenance-html.form";
 import { CustomerMaintenanceAnnotationsFormModule } from './forms/customer-maintenance-annotations/customer-maintenance-annotations.form';
+import { environment } from '../environments/environment';
 
 load(
   likelySubtags,
@@ -95,7 +96,7 @@ load(
       component: SmartFormOutletComponent,
       data: {
         BrowserTitleTemplate: 'Start',
-        ViewUri: 'frontend://assets/start-page.layout.json'
+        ViewUri: `frontend://${environment.baseHref}/assets/start-page.layout.json`
       }
     }],
     { useHash: true })
