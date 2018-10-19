@@ -55,7 +55,7 @@ export class AblDojoComponent implements OnInit, AfterViewInit {
 
   executeAbl () {
 
-    this.smartHttp.post<string> (`${this.serviceAdapter.smartRestURI}/ExecuteAbl`, this.ablSource)
+    this.smartHttp.post<string> (`${this.serviceAdapter.smartRestURI}/ExecuteAbl`, this.ablSource, { responseType: 'text' })
         .subscribe(response => {
             this.ablResult = response;
         });
