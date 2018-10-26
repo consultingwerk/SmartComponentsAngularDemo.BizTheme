@@ -26,7 +26,7 @@
 		"@angular/platform-browser": "^6.1.0",
 		"@angular/platform-browser-dynamic": "^6.1.0",
 		"@angular/router": "^6.1.0",
-		"@consultingwerk/smartcomponent-library": "^1.5.1",
+		"@consultingwerk/smartcomponent-library": "^1.5.2",
 		"@consultingwerk/smartcomponents-jsdo-core": "^6.0.0",
 		"@progress/kendo-angular-buttons": "^4.1.2",
 		"@progress/kendo-angular-charts": "^3.3.0",

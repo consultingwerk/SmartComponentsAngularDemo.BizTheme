@@ -53,3 +53,12 @@ smart-dialog * {
 .smart-toolbar-button:hover {
     background: #e8e8e8 !important;
 }
+
+.smart-toolbar-button.smart-toolbar-menu-item:hover {
+    background-image: initial !important;
+}
+
+.smart-toolbar-dropdown-menu {
+    border-radius: 0px !important;
+    background-image: linear-gradient(#ededed,#e8e8e8) !important;
+}
