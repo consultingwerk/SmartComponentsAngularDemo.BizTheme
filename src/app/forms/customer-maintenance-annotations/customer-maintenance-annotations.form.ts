@@ -31,22 +31,20 @@ export class CustomerMaintenanceAnnotationsFormComponent extends SmartFormCompon
         
         super.ngOnInit();
 
-        this.viewerRegistry.smartViewerAdded.pipe(first(viewer => viewer.name === 'CustomerViewer'))
-            .subscribe(customerViewer => {
-                customerViewer.inputValueChanged.subscribe(() => {
-                    this.setStateInputSensitivity();
-                });
+        this.viewerRegistry.smartViewerAdded.pipe(first(viewer => viewer.name.toLowerCase() === 'customerviewer'))
+        .subscribe(customerViewer => {
+            customerViewer.inputValueChanged.subscribe(() => {
+                this.setStateInputSensitivity();
             });
+        });
 
-        console.log('got viewer');
         const customerDataSource = this.dsRegistry.getDataSource('customerDataSource') || await this.dsRegistry.dataSourceAdded.pipe(
             first(ev => ev.dataSourceName === 'customerDataSource'),
             map(ev => ev.dataSource)
         ).toPromise();
-        console.log('got data source');
         this.customerDatasource = customerDataSource;
-        console.log(this.customerDatasource)
         customerDataSource.selectionChanged.subscribe(selectionEvent => {
+            this.customerDatasource.selected.Name = 'Test';
             this.setStateInputSensitivity();
         });
         customerDataSource.stateChanged.subscribe(() => {
@@ -58,9 +56,8 @@ export class CustomerMaintenanceAnnotationsFormComponent extends SmartFormCompon
 
     private setStateInputSensitivity() {
         setTimeout(async () => {
-            const customerCountryInput = await this.widgetFactory.GetFacade('Country');
-            const customerStateInput = await this.widgetFactory.GetFacade('State');
-
+            const customerCountryInput = await this.widgetFactory.GetFacade('customerViewer.eCustomer.Country');
+            const customerStateInput = await this.widgetFactory.GetFacade('customerViewer.eCustomer.State');
             if (customerCountryInput.SCREEN_VALUE) {
                 customerStateInput.SENSITIVE = customerCountryInput.SCREEN_VALUE.toUpperCase() === 'USA';
             }

@@ -1,0 +1,10 @@
+.order {
+    position: relative;
+    color: red;
+  }
+
+  :host /deep/ td[role=gridcell].k-state-selected,  :host /deep/ td[role=gridcell].k-state-selected .k-link {
+      background-color: white !important;
+      border-color: #007bff !important;
+      color: #007bff !important;
+  }

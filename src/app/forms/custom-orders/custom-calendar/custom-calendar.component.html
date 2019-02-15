@@ -1,0 +1,22 @@
+<div class="col-xs-12">
+  <div class="display: flex">
+      <kendo-calendar
+        #monthCalendar
+        [value]="selectedDate"
+        (valueChange)="monthSelected($event)"
+        [topView]="'year'"
+        [bottomView]="'year'">
+      </kendo-calendar>
+      <kendo-calendar
+        style="margin-left: 15px"
+        #dateCalendar
+        [navigation]="false"
+        [value]="selectedDate"
+        (valueChange)="selectByOrderDate($event)"
+        [topView]="'month'">
+          <ng-template kendoCalendarMonthCellTemplate let-date>
+            <span [ngClass]="hasOrder(date)">{{date.getDate()}}</span>
+          </ng-template>
+      </kendo-calendar>
+    </div>
+</div>

@@ -56,14 +56,11 @@ export class CustomerMaintenanceFormComponent extends SmartFormComponent impleme
 
         });
 
-        console.log('got viewer');
         const customerDataSource = this.dsRegistry.getDataSource('CustomerDataSource') || await this.dsRegistry.dataSourceAdded.pipe(
             first(ev => ev.dataSourceName === 'CustomerDataSource'),
             map(ev => ev.dataSource)
         ).toPromise();
-        console.log('got data source');
         this.customerDatasource = customerDataSource;
-        console.log(this.customerDatasource)
         customerDataSource.selectionChanged.subscribe(selectionEvent => {
             this.customerCountryCombo.ngModel = this.customerDatasource.selected.Country;
             this.setStateInputSensitivity();
@@ -75,7 +72,6 @@ export class CustomerMaintenanceFormComponent extends SmartFormComponent impleme
     }
 
     private handleToolbarButtonClick(buttonName: string) {
-        console.log('button clicked: %s', buttonName);
         switch (buttonName) {
             case 'customer-orders':
                 this.navigationService.navigate('customer/:CustNum/orders', {
