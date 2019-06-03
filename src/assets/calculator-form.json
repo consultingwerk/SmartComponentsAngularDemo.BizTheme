@@ -1,0 +1,80 @@
+{
+	"dataSources": {},
+	"columns": [
+		{
+			"CalculatorViewer": {
+				"componentType": "frame",
+				"componentOptions": {
+					"objectName": "CalculatorViewer",
+					"viewerLayout": {
+						"GroupBox": {
+							"type": "fieldset",
+							"title": "Values",
+							"fields": {
+								"Value1": {
+									"type": "field",
+									"inputSettings": {
+										"style": {
+											"width": "150px"
+										}
+									},
+									"label": "Value 1"
+								},
+								"Value2": {
+									"type": "field",
+									"inputSettings": {
+										"style": {
+											"width": "150px"
+										}
+									},
+									"label": "Value 2"
+								}
+							}
+						},
+						"GroupBox2": {
+							"type": "fieldset",
+							"title": "Calculate",
+							"fields": {
+								"group1": {
+									"type": "group",
+									"fields": {
+										"ButtonAdd": {
+											"type": "field",
+											"inputSettings": {
+												"inputType": "button"
+											},
+											"label": "Add"
+										},
+										"ButtonMultiply": {
+											"type": "field",
+											"inputSettings": {
+												"inputType": "button"
+											},
+											"label": "Multiplicate"
+										}
+									}
+								},
+								"Result": {
+									"type": "field",
+									"inputSettings": {
+										"style": {
+											"width": "150px"
+										}
+									},
+									"label": "Result"
+								}
+							}
+						}
+					},
+					"settings": {
+						"style": {
+							"margin-top": "0.5em",
+							"background-color": "white",
+							"position": "relative"
+						}
+					}
+				}
+			}
+		}
+	]
+}

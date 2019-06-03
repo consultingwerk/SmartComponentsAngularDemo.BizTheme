@@ -20,6 +20,7 @@ import { CustomerMaintenanceAnnotationsFormModule } from './forms/customer-maint
 import { environment } from '../environments/environment';
 import '@progress/kendo-angular-intl/locales/de/all';
 import { CustomOrdersFormModule } from './forms/custom-orders/custom-orders.form';
+import {CalculatorFormModule} from "./forms/calculator/calculator.form";
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { CustomOrdersFormModule } from './forms/custom-orders/custom-orders.form
   ],
   entryComponents: [LogoutComponent],
   imports: [
+		CalculatorFormModule,
     CustomerMaintenanceAnnotationsFormModule,
 		CustomerMaintenanceHtmlFormModule,
 		CustomerTabfolderFormModule,
@@ -58,7 +60,7 @@ import { CustomOrdersFormModule } from './forms/custom-orders/custom-orders.form
       // smartRestURI: 'http://localhost:8980/SmartJsdoBackendService/static/staticbackend/',
       // imageURI: 'http://localhost:8980/SmartJsdoBackendService/static/smartimages/',
       // templateURI: 'http://localhost:8980/SmartJsdoBackendService/static/staticbackend',
-      breadcrumbNavigation: true,
+      breadcrumbNavigation: false,
       mdiInterface: false,
       moduleCode: 'Web2 Demo',
       development: false,
@@ -67,7 +69,8 @@ import { CustomOrdersFormModule } from './forms/custom-orders/custom-orders.form
           cellTextWrap: true,
           showNoDataMessage: true
         }
-      }
+      },
+      enableRippleEffect: true
     }),
     BrowserAnimationsModule,
     RouterModule.forRoot([{
