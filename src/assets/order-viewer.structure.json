@@ -6,7 +6,13 @@
             "Ordernum": {
                 "enabledState": "add"
             },
-            "OrderDate": true,
+            "OrderDate": {
+                "type": "field",
+                "label": "Order Date",
+                "inputSettings": {
+                    "format": "yyyy-MM-dd HH:mm"
+                }
+            },
             "OrderStatus": true,
             "Carrier": true,
             "Instructions": true,

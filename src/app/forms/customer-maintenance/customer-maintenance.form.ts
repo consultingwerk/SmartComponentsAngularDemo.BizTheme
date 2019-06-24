@@ -30,8 +30,8 @@ export class CustomerMaintenanceFormComponent extends SmartFormComponent impleme
     async ngOnInit() {
         // Add your own initialization logic here
 
-        this.setFormConfiguration('/SmartForm/Form/customerForm');
-
+        //this.setFormConfiguration('/SmartForm/Form/customerForm');
+        this.setFormConfiguration('frontend://assets/customer-maintenance.layout.json');
         super.ngOnInit();
 
         this.viewerRegistry.smartViewerAdded.pipe(first(viewer => viewer.name === 'CustomerViewer'))

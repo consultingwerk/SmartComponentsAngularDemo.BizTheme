@@ -1,0 +1,25 @@
+{
+   "SecurityTokenCode": {
+       "type": "field",
+       "label": "Security Token",
+       "inputSettings": {
+           "inputType": "lookup",
+           "lookupOptions": {
+            "objectName": "TokenLookup",
+            "dialogTitle": "Token",
+            "entityName": "Consultingwerk.SmartFramework.Authorization.SecurityTokenBusinessEntity",
+            "entityTable": "eSmartSecurityToken",
+            "gridLayout": "frontend://assets/security-token-grid.layout.json",
+            "dialogOptions": {
+            "width": "700px",
+            "height": "650px"
+            },
+            "keyField": "SecurityTokenCode",
+            "fields": "SecurityTokenCode",
+            "fieldBinding": {
+            "SecurityTokenCode": "SecurityTokenCode"
+            }
+            }
+       }
+   } 
+}

@@ -1,0 +1,10 @@
+{
+    "SecurityTokenCode": true,
+    "SecurityTokenDescription": {
+        "type": "field",
+        "inputSettings": {
+            "inputType": "editor"
+        }
+    }
+ 
+}

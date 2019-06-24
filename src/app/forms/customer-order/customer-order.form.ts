@@ -25,8 +25,8 @@ export class CustomerOrderFormComponent extends CustomerMaintenanceFormComponent
     async ngOnInit() {
         // Add your own initialization logic here
         
-        this.setFormConfiguration('/SmartForm/Form/CustomerOrderForm');
-        
+        //this.setFormConfiguration('/SmartForm/Form/CustomerOrderForm');
+        this.setFormConfiguration('frontend://assets/customer-orders.structure.json');
         SmartFormComponent.prototype.ngOnInit.call(this);
     }
 

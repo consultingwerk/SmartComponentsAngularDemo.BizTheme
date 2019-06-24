@@ -21,6 +21,12 @@ import { environment } from '../environments/environment';
 import '@progress/kendo-angular-intl/locales/de/all';
 import { CustomOrdersFormModule } from './forms/custom-orders/custom-orders.form';
 import {CalculatorFormModule} from "./forms/calculator/calculator.form";
+import { SchedulerJobStatusFormModule } from './forms/scheduler-job-status/scheduler-job-status.module';
+import { FieldSecurityItemMaintenanceFormModule } from './forms/field-security-item-maintenance/field-security-item-maintenance.form';
+import { MessageMaintenanceFormModule } from './forms/message-maintenance/message-maintenance.form';
+import { SecurityObjectMaintenanceFormModule } from './forms/security-object-maintenance/security-object-maintenance.form';
+import { SecurityTokenMaintenanceFormModule } from './forms/security-token-maintenance/security-token-maintenance.form';
+import { SecurityRealmMaintenanceFormModule } from './forms/security-realm-maintenance/security-realm-maintenance.form';
 
 @NgModule({
   declarations: [
@@ -38,6 +44,12 @@ import {CalculatorFormModule} from "./forms/calculator/calculator.form";
     CustomerOrderFormModule,
     CustomOrdersFormModule,
     BrowserModule,
+    SchedulerJobStatusFormModule,
+		FieldSecurityItemMaintenanceFormModule,
+		MessageMaintenanceFormModule,
+		SecurityObjectMaintenanceFormModule,
+		SecurityTokenMaintenanceFormModule,
+    SecurityRealmMaintenanceFormModule,
     IntlModule,
     DeveloperToolsCustomFormModule,
     CustomerMaintenanceFormModule,

@@ -1,0 +1,240 @@
+{
+	
+	"dataSources": {
+		"SchedulerDataSource": {
+			"objectName": "SchedulerJobStatusDataSource",
+			"entityName": "Consultingwerk.SmartFramework.Scheduler.SchedulerJobStatusBusinessEntity",
+			"tableRef": "eSmartSchedulerJobStatus"
+		}
+	},
+	"columns": [
+		{
+			"splitview": {
+				"componentType": "splitview",
+				"componentOptions": {
+					"left": {
+						"columns": [{
+							"SchedulerGrid": {
+								"componentType": "grid",
+								"componentOptions": {
+									"dataSource": "SchedulerJobStatusDataSource",
+									"objectName": "SchedulerGrid",
+									"gridLayout": {
+										"scrollable": "scrollable",
+										"filterable": "row",
+										"pageable": {
+											"pageSize": 10,
+											"pageSizes": [10, 25, 50, 100]
+										},
+										"height": 500,
+										"columns": [{
+											"field": "JobName",
+											"title": "Name"
+										}, {
+											"field": "SchedulerJobName",
+											"title": "Job name"
+										}, {
+											"field": "ScheduleDateTime",
+											"title": "Scheduled job",
+											"format": "dd.MM.yyyy HH:MM"
+										}, {
+											"field": "Recurring",
+											"title": "Recurring"
+										}, {
+											"field": "JobStatus",
+											"title": "Job status"
+										}, {
+											"field": "StatusText",
+											"title": "Status text"
+										}, {
+											"field": "Percentage",
+											"title": "Progress"
+										}]
+									}
+								}
+							}
+						}]
+					},
+					"right": {
+						"columns": [{
+							"SchedulerToolbar": {
+								"componentType": "toolbar",
+								"componentOptions": {
+									"objectName": "SchedulerToolbar",
+									"buttons": [
+										{
+											"buttonType": "command",
+											"buttonAction": "RefreshHandler",
+											"buttonName": "refresh",
+											"buttonLabel": "Refresh",
+											"buttonTooltip": "Refresh the data",
+											"buttonImage": "Consultingwerk/Windows/Framework/Images/Scheduler/refresh_16.png"
+										},
+										{
+											"buttonType": "separator"
+										},
+										{
+											"buttonType": "command",
+											"buttonAction": "PutJobStatusOnHoldHandler",
+											"buttonName": "status-onhold",
+											"buttonLabel": "On Hold",
+											"buttonTooltip": "Puts job status on hold",
+											"buttonImage": "Consultingwerk/Windows/Framework/Images/Scheduler/alarmclock_pause_16.png"
+										},
+										{
+											"buttonType": "command",
+											"buttonAction": "PutJobStatusOnScheduledHandler",
+											"buttonName": "status-scheduled",
+											"buttonLabel": "Resume",
+											"buttonTooltip": "Resumes the job",
+											"buttonImage": "Consultingwerk/Windows/Framework/Images/Scheduler/alarmclock_run_16.png"
+										},
+										{
+											"buttonType": "command",
+											"buttonAction": "PutJobStatusOnCancelledHandler",
+											"buttonName": "status-cancelled",
+											"buttonLabel": "Cancel Job",
+											"buttonTooltip": "Cancel the job",
+											"buttonImage": "Consultingwerk/Windows/Framework/Images/Scheduler/alarmclock_stop_16.png"
+										}
+									]	
+								}
+							},
+
+							"LoadingIndicator": {
+								"componentType": "custom",
+								"componentOptions": {
+									"placeholderId": "loadingIndicator"
+								}
+							},
+
+							"SchedulerViewer": {
+								"componentType": "viewer",
+								"componentOptions": {
+									"tableIoSource": "SchedulerToolbar",
+									"objectName": "SchedulerViewer",
+									"dataSource": "SchedulerJobStatusDataSource",
+									"viewerLayout": {
+										"JobName": {
+											"type": "field",
+											"label": "Name",
+											"inputSettings": {
+												"style": { "width": "300px"}
+											},
+											"enabledState": "none"
+										},
+										"ScheduledJobName": {
+											"type": "field",
+											"label": "Job Name",
+											"inputSettings": {
+												"style": { "width": "100%"}
+											},
+											"enabledState": "none"
+										},
+										"Description": {
+											"type": "field",
+											"label": "Description",
+											"inputSettings": {
+												"inputType": "editor",
+												"style": { "width": "100%"}
+											},
+											"enabledState": "none"
+										},
+										"Recurring": {
+											"type": "field",
+											"label": "Recurring",
+											"inputSettings": {
+												"inputType": "checkbox"
+											},
+											"enabledState": "none"
+										},
+										"ScheduleDateTime": {
+											"type": "field",
+											"label": "Scheduled Job Execution",
+											"inputSettings": {
+												"inputType": "date",
+												"format": "dd.MM.yyyy HH:MM"
+											},
+											"enabledState": "none"
+										},
+										"StartDateTime": {
+											"type": "field",
+											"label": "Start DateTime",
+											"inputSettings": {
+												"inputType": "date",
+												"format": "dd.MM.yyyy HH:MM"
+											},
+											"enabledState": "none"
+										},
+										"FinishedDateTime": {
+											"type": "field",
+											"label": "Finished DateTime",
+											"inputSettings": {
+												"inputType": "date",
+												"format": "dd.MM.yyyy HH:MM"
+											},
+											"enabledState": "none"
+										},
+										"JobStatus": {
+											"type": "field",
+											"label": "Job Status",
+											"inputSettings": {
+												"inputType": "text",
+												"style": { "width": "300px"}
+											},
+											"enabledState": "none"
+										},
+										"Cancel": {
+											"type": "field",
+											"label": "Cancel Req.",
+											"inputSettings": {
+												"inputType": "checkbox"
+											},
+											"enabledState": "none"
+										},
+										"StatusText": {
+											"type": "field",
+											"label": "Status Text",
+											"inputSettings": {
+												"style": { "width": "100%"}
+											},
+											"enabledState": "none"
+										},
+										"Percentage": {
+											"type": "field",
+											"label": "Progress (%)",
+											"inputSettings": {
+												"style": { "width": "150px"}
+											},
+											"enabledState": "none"
+										},
+										"MaxExecutionDelay": {
+											"type": "field",
+											"label": "Maximum Delay (seconds)",
+											"inputSettings": {
+												"style": { "width": "150px"}
+											},
+											"enabledState": "none"
+										},
+										"JobParameter": {
+											"type": "field",
+											"label": "Job Parameter",
+											"inputSettings": {
+												"inputType": "editor"
+											},
+											"enabledState": "none"
+										}
+
+											
+										
+										
+									}
+								}
+							}
+						}]
+					}
+				}
+			}
+		}
+	]
+}

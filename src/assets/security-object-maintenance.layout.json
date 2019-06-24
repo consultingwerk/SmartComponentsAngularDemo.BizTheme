@@ -1,0 +1,145 @@
+{
+	"dataSources": {
+		"SecurityObjectDataSource": {
+			"objectName": "SecurityObjectDataSource",
+			"entityName": "Consultingwerk.SmartFramework.Authorization.SecurityObjectBusinessEntity",
+            "tableRef": "eSmartSecurityObject",
+            "entityView": "eSmartSecurityObjectToken"
+        
+        },
+        "SecurityObjectTokenDataSource": {
+            "objectName": "SecurityObjectTokenDataSource",
+            "entityName": "Consultingwerk.SmartFramework.Authorization.SecurityObjectBusinessEntity",
+            "tableRef": "eSmartSecurityObjectToken",
+            "parentDataSource": "SecurityObjectDataSource",
+            "partialDataset": true,
+            "foreignFields": "SecurityObjectGuid,SecurityObjectGuid"
+        }
+},
+"columns": [
+    {
+        "splitView": {
+            "componentType": "splitview",
+            "componentOptions": {
+                "orientation": "horizontal",
+                "left": {
+                    "columns": [
+                        {
+                            "SecurityGrid": {
+                                "componentType": "grid",
+                                "componentOptions": {
+                                    "dataSource": "SecurityObjectDataSource",
+                                    "objectName": "SecurityObjectGrid",
+                                    "gridLayout": "frontend://assets/security-object-grid.layout.json"
+                                }
+                            }
+                        }
+                    ]
+                },
+                "right": {
+                    "columns": [
+                        {
+                            "TabFolder": {
+                                "componentType": "tabfolder",
+                                "componentOptions": {
+                                    "pages": [
+                                        {
+                                            "label": "Object",
+                                            "columns": [
+                                                {
+                                                    "SecurityRealmToolbar": {
+                                                        "componentType": "toolbar",
+                                                        "componentOptions": {
+                                                            "objectName": "SecurityObjectToolbar",
+                                                            "buttons": [
+                                                                "add",
+                                                                "copy",
+                                                                "save",
+                                                                "cancel",
+                                                                "delete"
+                                                            ]
+                                                        }
+                                                    },
+                                                    "SecurityRealmViewer": {
+                                                        "componentType": "viewer",
+                                                        "componentOptions": {
+                                                            "tableIoSource": "SecurityObjectToolbar",
+                                                            "dataSource": "SecurityObjectDataSource",
+                                                            "objectName": "SecurityObjectViewer",
+                                                            "viewerLayout": "frontend://assets/security-object-viewer.layout.json"
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "label": "Token",
+                                            "columns": [
+                                                {
+                                                    "ObjectSplitView": {
+                                                        "componentType": "splitview",
+                                                        "componentOptions": {
+                                                           
+                                                            "left": {
+                                                                "columns": [
+                                                                    {
+                                                                        "TokenGrid": {
+                                                                            "componentType": "grid",
+                                                                            "componentOptions": {
+                                                                                "dataSource": "SecurityObjectTokenDataSource",
+                                                                                "gridLayout": "frontend://assets/security-object-token-grid.layout.json",
+                                                                                "objectName": "SecurityObjectTokenGrid"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            },
+                                                            "right": {
+                                                                "columns": [
+                                                                    {
+                                                                        "TokenToolbar": {
+                                                                            "componentType": "toolbar",
+                                                                            "componentOptions": {
+                                                                                "objectName": "SecurityObjectTokenToolbar",
+                                                                                "buttons": [
+                                                                                    "add",
+                                                                                    "save",
+                                                                                    "cancel",
+                                                                                    "delete"
+                                                                                ]
+                                                                            }
+                                                                        },
+                                                                        "TokenViewer": {
+                                                                            "componentType": "viewer",
+                                                                            "componentOptions": {
+                                                                                "dataSource": "SecurityObjectTokenDataSource",
+                                                                                "viewerLayout": "frontend://assets/security-object-token-viewer.layout.json",
+                                                                                "objectName": "SecurityObjectTokenViewer",
+                                                                                "tableIoSource": "SecurityObjectTokenToolbar"
+                                                                            }
+                                                                        }
+                                                                    }
+                                                                ]
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            ]
+                                        }
+                                    ]
+                                }
+                            }
+
+
+
+
+
+                            
+                        }
+                    ]
+                }
+            }
+        }
+    }
+]
+}

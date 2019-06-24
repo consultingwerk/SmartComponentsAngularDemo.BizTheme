@@ -59,7 +59,7 @@
                             "RepName": "selected.eSalesrep[0].RepName"
                         },
                         "keyField": "SalesRep",
-                        "keyValueField": "RepName"
+                        "keyValueField": "SalesRep"
                     }
                 }
             },

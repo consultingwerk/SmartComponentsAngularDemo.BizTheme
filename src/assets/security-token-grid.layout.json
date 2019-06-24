@@ -1,0 +1,25 @@
+{
+    "columns": [
+        {
+            "field": "SecurityTokenCode",
+            "title": "Token Code"
+        },
+        {
+            "field": "SecurityTokenDescription",
+            "title": "Token Description"
+        }
+    ],
+    "filterable": "row",
+    "scrollable": "scrollable",
+    "pageable": {
+        "refresh": true,
+        "pageSizes": [
+            10,
+            25,
+            100
+        ],
+        "pageSize": 10,
+        "buttonCount": 5
+    },
+    "height": 500
+}

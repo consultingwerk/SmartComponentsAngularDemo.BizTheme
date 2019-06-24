@@ -1,0 +1,62 @@
+{
+	"dataSources": {
+		"SecurityTokenDataSource": {
+		"objectName": "SecurityTokenDataSource",
+		"entityName": "Consultingwerk.SmartFramework.Authorization.SecurityTokenBusinessEntity",
+			"tableRef": "eSmartSecurityToken"
+
+	}
+},
+"columns": [
+	{
+		"splitView": {
+			"componentType": "splitview",
+			"componentOptions": {
+				"orientation": "horizontal",
+				"left": {
+					"columns": [
+						{
+							"SecurityRealmGrid": {
+								"componentType": "grid",
+								"componentOptions": {
+									"dataSource": "SecurityTokenDataSource",
+									"objectName": "SecurityTokenGrid",
+									"gridLayout": "frontend://assets/security-token-grid.layout.json"
+								}
+							}
+						}
+					]
+				},
+				"right": {
+					"columns": [
+						{
+							"SecurityRealmToolbar": {
+								"componentType": "toolbar",
+								"componentOptions": {
+									"objectName": "SecurityTokenToolbar",
+									"buttons": [
+										"add",
+										"copy",
+										"save",
+										"cancel",
+										"delete"
+									]
+								}
+							},
+							"SecurityRealmViewer": {
+								"componentType": "viewer",
+								"componentOptions": {
+									"tableIoSource": "SecurityTokenToolbar",
+									"dataSource": "SecurityTokenDataSource",
+									"objectName": "SecurityTokenViewer",
+									"viewerLayout": "frontend://assets/security-token-viewer.layout.json"
+								}
+							}
+						}
+					]
+				}
+			}
+		}
+	}
+]
+}

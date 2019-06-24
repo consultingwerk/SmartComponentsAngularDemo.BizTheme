@@ -1,0 +1,7 @@
+{
+        "SecurityRealmCode": true,
+        "SecurityRealmDescription": true,
+        "SecurityRealmService": true,
+        "DefaultRestricted": true,
+        "CompanyDependent": true
+}

@@ -1,0 +1,13 @@
+{
+    "FieldName": true,
+    "SecurityKey": true,
+    "ObjectName": true,
+    "Description" : {
+        "type": "field",
+        "inputSettings": {
+            "inputType": "editor"
+        }
+    }
+  
+    
+}

@@ -1,0 +1,172 @@
+{
+    "dataSources": {
+        "MessageDataSource": {
+            "objectName": "MessageDataSource",
+            "entityName": "Consultingwerk.SmartFramework.System.MessageBusinessEntity",
+            "tableRef": "eSmartMessage"
+        }
+    },
+    "columns": [
+        {
+            "splitview": {
+                "componentType": "splitview",
+                "componentOptions": {
+                    "left": {
+                        "columns": [{
+                            "MessageGrid": {
+                                "componentType": "grid",
+                                "componentOptions": {
+                                    "dataSource": "MessageDataSource",
+                                    "objectName": "MessageGrid",
+                                    "gridLayout": {
+                                        "scrollable": "scrollable",
+                                        "filterable": "row",
+                                        "pageable": {
+                                            "pageSize": 10,
+                                            "pageSizes": [
+                                                10,
+                                                30,
+                                                50
+                                            ]
+                                        },
+                                        "height": 500,
+                                        "columns": [{
+                                            "field": "MessageType",
+                                            "title": "Type"
+                                        }, {
+                                            "field": "LanguageGuid",
+                                            "title": "Language"
+                                        }, {
+                                            "field": "MessageGroup",
+                                            "title": "Group"
+                                        }, {
+                                            "field": "MessageNumber",
+                                            "title": "Number"
+                                        }, {
+                                            "field": "MessageText",
+                                            "title": "Text"
+                                        }, {
+                                            "field": "MessageBoxStyle",
+                                            "title": "Message Box Style"
+                                        }]
+                                    }
+                                }
+                            }
+                        }]
+                    },
+                    "right": {
+                        "columns": [{
+                            "MessageToolbar": {
+                                "componentType": "toolbar",
+                                "componentOptions": {
+                                    "objectName": "MessageToolbar",
+                                    "buttons": [
+                                        "add",
+                                        "copy",
+                                        "save",
+                                        "cancel",
+                                        "delete"
+                                    ]
+                                }
+                            },
+                            "MessageViewer": {
+                                "componentType": "viewer",
+                                "componentOptions": {
+                                    "tableIoSource": "MessageToolbar",
+                                    "dataSource": "MessageDataSource",
+                                    "viewerLayout": {
+                                        "Groupbox1": {
+                                            "type": "group",
+                                            "fields": {
+                                                "MessageGroup": true,
+                                                "MessageNumber": {
+                                                    "type": "field",
+                                                    "label": "Number",
+                                                    "inputSettings": {
+                                                        "inputType": "number",
+                                                        "format": "n0",
+                                                        "step": 1
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "Groupbox2": {
+                                            "type": "group",
+                                            "fields": {
+                                                "MessageLanguage": {
+                                                    "type": "field",
+                                                    "label": "Language",
+                                                    "inputSettings": {
+                                                        "inputType": "combo",      
+                                                        "comboOptions": {
+                                                            "entityName": "Consultingwerk.SmartFramework.System.LanguageBusinessEntity",
+                                                            "tableRef": "eSmartLanguage",
+                                                            "displayColumn": "LanguageName",
+                                                            "keyColumn": "LanguageGuid"
+                                                        } 
+                                                    }
+                                                },
+                                                "MessageType": {
+                                                    "type": "field",
+                                                    "label": "Type",
+                                                    "inputSettings": {
+                                                        "inputType": "combo",
+                                                        "comboOptions": {
+                                                            "valueListPair": [
+                                                                "Error",
+                                                                "Error",
+                                                                "Information",
+                                                                "Info",
+                                                                "Question",
+                                                                "Question",
+                                                                "Warning",
+                                                                "Warning"
+                                                            ]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        },
+                                        "MessageBoxStyle": {
+                                            "type": "field",
+                                            "label": "Message Box Style",
+                                            "inputSettings": {
+                                                "inputType": "combo",
+                                                "style": { "width": "100%" },
+                                                "comboOptions": {
+                                                    "smartValueList": "MsgBoxDisplayStyle"
+                                                }
+                                            }
+                                        },
+                                        "MessageText": {
+                                            "type": "field",
+                                            "label": "Text",
+                                            "inputSettings": {
+                                                "inputType": "editor",
+                                                "style": {
+                                                    "width": "100%",
+                                                    "height": "150px"
+                                                }
+                                            }
+                                        },
+                                        "MessageDetail": {
+                                            "type": "field",
+                                            "label": "Detail",
+                                            "inputSettings": {
+                                                "inputType": "editor",
+                                                "style": {
+                                                    "width": "100%",
+                                                    "height": "400px"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }]
+                    }
+                }
+            }
+        }
+    ]
+}

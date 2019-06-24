@@ -1,0 +1,37 @@
+{
+    "columns": [
+        {
+            "field": "SecurityRealmCode",
+            "title": "Code"
+        },
+        {
+            "field": "SecurityRealmDescription",
+            "title": "Änderung"
+        },
+        {
+            "field": "SecurityRealmService",
+            "title": "Realm Service"
+        },
+        {
+            "field": "DefaultRestricted",
+            "title": "Default Restricted"
+        },
+        {
+            "field": "CompanyDependent",
+            "title": "Company Dependent"
+        }
+    ],
+    "filterable": "row",
+        "scrollable": "scrollable",
+    "pageable": {
+        "refresh": true,
+        "pageSizes": [
+        10,
+        25,
+        100
+        ],
+        "pageSize": 10,
+        "buttonCount": 5
+        },
+        "height": 500
+}

@@ -1,0 +1,11 @@
+{
+    "SecurityObjectName": true,
+    "SecurityObjectDescription": 
+    {
+        "type": "field",
+        "inputSettings": {
+            "inputType": "editor"
+        }
+    }
+   
+}

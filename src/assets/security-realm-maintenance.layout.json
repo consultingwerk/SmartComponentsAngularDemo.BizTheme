@@ -1,0 +1,62 @@
+{
+	"$schema": "../../node_modules/@consultingwerk/smartcomponent-library/ui/form/schemas/smart-form.schema.json",
+	"dataSources": {
+		"SecurityRealmDataSource": {
+			"objectName": "SecurityRealmDataSource",
+			"entityName": "Consultingwerk.SmartFramework.Authorization.SecurityRealmBusinessEntity",
+			"tableRef": "eSmartSecurityRealm"
+		}
+	},
+	"columns": [
+		{
+			"splitView": {
+				"componentType": "splitview",
+				"componentOptions": {
+					"orientation": "horizontal",
+					"left": {
+						"columns": [
+							{
+								"SecurityRealmGrid": {
+									"componentType": "grid",
+									"componentOptions": {
+										"dataSource": "SecurityRealmDataSource",
+										"objectName": "SecurityRealmGrid",
+										"gridLayout": "frontend://assets/security-realm-grid.layout.json"
+									}
+								}
+							}
+						]
+					},
+					"right": {
+						"columns": [
+							{
+								"SecurityRealmToolbar": {
+									"componentType": "toolbar",
+									"componentOptions": {
+										"objectName": "SecurityRealmToolbar",
+										"buttons": [
+											"add",
+											"copy",
+											"save",
+											"cancel",
+											"delete"
+										]
+									}
+								},
+								"SecurityRealmViewer": {
+									"componentType": "viewer",
+									"componentOptions": {
+										"tableIoSource": "SecurityRealmToolbar",
+										"dataSource": "SecurityRealmDataSource",
+										"objectName": "SecurityRealmViewer",
+										"viewerLayout": "frontend://assets/security-realm-viewer.layout.json"
+									}
+								}
+							}
+						]
+					}
+				}
+			}
+		}
+	]
+}

@@ -1,0 +1,26 @@
+{
+    "columns": [
+        {
+            "field": "SecurityObjectName",
+            "title": "Name"
+        },
+        {
+            "field": "SecurityObjectDescription",
+            "title": "Description"
+        }
+     
+    ],
+    "filterable": "row",
+        "scrollable": "scrollable",
+    "pageable": {
+        "refresh": true,
+        "pageSizes": [
+        10,
+        25,
+        100
+        ],
+        "pageSize": 10,
+        "buttonCount": 5
+        },
+        "height": 500
+}
