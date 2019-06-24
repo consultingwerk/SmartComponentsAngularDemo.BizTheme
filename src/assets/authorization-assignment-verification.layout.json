@@ -1,0 +1,191 @@
+{
+	"dataSources": {
+	},
+	"columns": [
+		{
+			"splitview": {
+				"componentType": "splitview",
+				"componentOptions": {
+					"orientation": "vertical",
+					"left": {
+						"columns": [{
+							"AuthorizationViewer1": {
+								"componentType": "frame",
+								"componentOptions": {
+									"objectName": "AuthorizationViewer1",
+									"viewerLayout": {
+										"SecurityRealmGuid": {
+											"type": "field",
+											"label": "Security Realm",
+											"inputSettings": {
+												"inputType": "combo",
+												"style": { "width": "100%" },
+                                                "comboOptions": {
+													"objectName": "SecurityRealmCode",
+													"entityName": "Consultingwerk.SmartFramework.Authorization.SecurityRealmBusinessEntity",
+													"keyColumn": "SecurityRealmGuid",
+													"tableRef": "eSmartSecurityRealm",
+													"displayColumn": "SecurityRealmDescription"
+                                                }
+											}
+										},
+										"SecurityItemDescription": {
+											"type": "field",
+											"label": "Security Item",
+											"inputSettings": {
+												"inputType": "lookup",
+												"lookupOptions": {
+													"objectName": "SecurityItemDescription",
+													"dialogTitle": "Lookup Security Item",
+													"entityName": "",
+													"entityTable": "",
+													"gridLayout": {
+														"columns": [],
+														"height": 400,
+														"scrollable": "scrollable",
+														"filterable": "row",
+														"pageable": {
+															"pageSize": 10,
+															"pageSizes": [10, 30, 50]
+														}
+													},
+													"dialogOptions": {
+														"width": "700px",
+														"height": "500px"
+													},
+													"fields": "",
+													"fieldBinding": {
+														"LanguageName": ""
+													},
+													"partialDataSet": true
+												}
+											}
+										},
+										"UserName": {
+											"type": "field",
+											"label": "User",
+											"inputSettings": {
+												"inputType": "lookup",
+												"lookupOptions": {
+													"objectName": "SecurityUser",
+													"dialogTitle": "Lookup User",
+													"entityName": "Consultingwerk.SmartFramework.Authentication.UserBusinessEntity",
+													"entityTable": "eSmartUser",
+													"gridLayout": {
+														"columns": [{
+															"field": "UserName",
+															"title": "UserName"
+														}, {
+															"field": "UserFullName",
+															"title": "Full Name"
+														}, {
+															"field": "LoginCompanyName",
+															"title": "Login Company Name"
+														}],
+														"height": 400,
+														"scrollable": "scrollable",
+														"filterable": "row",
+														"pageable": {
+															"pageSize": 10,
+															"pageSizes": [10, 30, 50]
+														}
+													},
+													"dialogOptions": {
+														"width": "700px",
+														"height": "500px"
+													},
+													"fields": "UserName",
+													"fieldBinding": {
+														"UserName": "UserName"
+													},
+													"keyField": "UserName",
+													"keyValueField": "UserGuid"
+												}
+											}
+										}
+									}
+								}
+							}
+						}]
+					},
+					"right": {
+						"columns": [{
+							"splitview": {
+								"componentType": "splitview",
+								"componentOptions": {
+									"left": {
+										"columns": [{
+											"AuthorizationViewer2": {
+												"componentType": "frame",
+												"componentOptions": {
+													"objectName": "AuthorizationViewer2",
+													"viewerLayout": {
+														"IsRestricted": {
+															"type": "field",
+															"label": "Restricted",
+															"inputSettings": {
+																"inputType": "checkbox"
+															},
+															"enabledState": "none"
+														},
+														"Reason": {
+															"type": "field",
+															"label": "Defined On",
+															"enabledState": "none"
+														},
+														"Runtime": {
+															"type": "field",
+															"label": "Runtime",
+															"enabledState": "none"
+														}
+													}
+												}
+											}
+										}]
+									},
+									"right": {
+										"columns": [{
+											"SecurityGroupGrid": {
+												"componentType": "custom",
+												"componentOptions": {
+													"placeholderId": "securityGroupGrid"
+												}
+											},
+											"AuthorizationGrid": {
+												"componentType": "grid",
+												"componentOptions": {
+													"dataSource": "AuthorizationDataSource",
+													"objectName": "AuthorizationGrid",
+													"gridLayout": {
+														"scrollable": "scrollable",
+														"filterable": "row",
+														"pageable": {
+															"pageSize": 10,
+															"pageSizes": [10, 20, 50]
+														},
+														"height": 500,
+														"columns": [{
+															"field": "seq",
+															"title": "Order"
+														}, {
+															"field": "GroupName",
+															"title": "Group Name"
+														}, {
+															"field": "LoginCompanyGuid",
+															"title": "Login Company"
+														}]
+													}
+												}
+											}
+										}]
+									}
+								}
+							}
+							
+						}]
+					}
+				}
+			}
+		}
+	]
+}

@@ -27,6 +27,7 @@ import { MessageMaintenanceFormModule } from './forms/message-maintenance/messag
 import { SecurityObjectMaintenanceFormModule } from './forms/security-object-maintenance/security-object-maintenance.form';
 import { SecurityTokenMaintenanceFormModule } from './forms/security-token-maintenance/security-token-maintenance.form';
 import { SecurityRealmMaintenanceFormModule } from './forms/security-realm-maintenance/security-realm-maintenance.form';
+import { SecurityAssignmentVerificationFormModule } from './forms/security-assignment-verification/security-assignment-verification.form';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { SecurityRealmMaintenanceFormModule } from './forms/security-realm-maint
   ],
   entryComponents: [LogoutComponent],
   imports: [
+    SecurityAssignmentVerificationFormModule,
 		CalculatorFormModule,
     CustomerMaintenanceAnnotationsFormModule,
 		CustomerMaintenanceHtmlFormModule,
